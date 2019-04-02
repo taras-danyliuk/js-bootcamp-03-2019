@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require('cors')
 
 const post = require("./routes/post");
 const user = require("./routes/user");
@@ -12,6 +13,7 @@ const db_name = "js-bootcamp";
 // Set up middleware
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(cors())
 
 // Set up routes
 app.use("/api/post", post)
